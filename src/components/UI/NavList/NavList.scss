@@ -1,0 +1,36 @@
+.nav-list {
+  color: white;
+  font-family: inherit;
+}
+
+.nav-list__element {
+  display: inline-block;
+  margin: 0 20px;
+  padding-bottom: 2px;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition: 0.3s;
+
+  &::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    height: 2px;
+    background: white;
+    transition-property: left, right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover::before {
+    left: 0;
+    right: 0;
+  }
+}

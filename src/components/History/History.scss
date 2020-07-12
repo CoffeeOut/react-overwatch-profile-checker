@@ -1,0 +1,44 @@
+@import "../../styles/variables";
+
+.history {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 50px auto;
+}
+
+.history__title,
+.history__empty {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 5px 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-size: 17px;
+}
+
+.history__title {
+  justify-content: flex-start;
+  background-color: $darkblue;
+  color: white;
+}
+
+.history__empty {
+  justify-content: center;
+  background-color: transparent;
+  color: $darkblue;
+}
+
+@media (max-width: 768px) {
+  .history {
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .history {
+    width: 50%;
+  }
+}

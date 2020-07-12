@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.side-menu {
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  flex-direction: column;
+  width: 50%;
+  max-width: 250px;
+  background-color: $darkblue;
+}
+
+.side-menu__element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 35px;
+  width: 100%;
+  padding: 10px 0;
+  color: white;
+  font-size: 15px;
+  transition: 0.3s;
+
+  &_active {
+    background-color: $purple;
+    box-shadow: inset 5px 0 0 0 darken($purple, 20%);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $purple;
+  }
+}
+
+@media (max-height: 500px) {
+  .side-menu {
+    top: 50px;
+  }
+}

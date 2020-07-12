@@ -1,0 +1,95 @@
+@import "styles/reset.css";
+@import "styles/variables.scss";
+@import 'fonts/font-face.css';
+
+.container {
+  width: 100%;
+  margin-top: 10vh;
+}
+
+.page-header {
+  z-index: 2;
+}
+
+.hamburger-menu,
+.page-header__side-menu { //show hamburger-menu and side-menu only on small screens
+  display: none;
+}
+
+.page-header__side-menu {
+  z-index: 1;
+}
+
+.page-main {
+  background-image: url("https://tinyurl.com/ybamwhem");
+}
+
+.page-header,
+.page-main {
+  font-family: 'futura_ltbold', sans-serif;
+}
+
+.page-header,
+.page-footer {
+  background: $darkblue;
+  color: white;
+}
+
+.search,
+.page-footer {
+  font-family: 'futurano2dw03-regular', sans-serif;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search {
+  margin: 100px auto;
+}
+
+.search-wrapper__error-message {
+  position: absolute;
+  bottom: -25px;
+  left: 10px;
+  color: red;
+  font-size: 15px;
+}
+
+.page-footer__link {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: $purple;
+  }
+}
+
+.page-footer__link,
+.page-footer__text {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .nav-list { //show hamburger-menu and side-menu only on small screens
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .page-header__side-menu {
+    display: flex;
+  }
+}
+
+@media (max-height: 500px) {
+  .container {
+    margin-top: 50px;
+  }
+}

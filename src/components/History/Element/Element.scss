@@ -1,0 +1,73 @@
+@import "../../../styles/variables";
+
+$colors: (
+        1: #ddc100,
+        2: #1bcb22,
+        3: #cc1818
+);
+
+.history__element {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 5px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: $darkblue;
+}
+
+.element__avatar {
+  height: 80%;
+  margin: 5px;
+}
+
+.element__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  margin-right: auto;
+}
+
+.element__nick-name {
+  font-size: 15px;
+}
+
+.element__date {
+  font-size: 13px;
+}
+
+.element__button-panel {
+  position: absolute;
+  right: 50px;
+  height: 100%;
+}
+
+.button-panel__button,
+.element__switch-display-button-panel {
+  height: 100%;
+  width: 50px;
+  transition: 0.3s;
+}
+
+.element__switch-display-button-panel {
+  background-color: $darkblue;
+
+  &:hover {
+    background-color: darken($darkblue, 10%);
+  }
+}
+
+@each $key, $color in $colors {
+  .button-panel__button:nth-child(#{$key}) {
+    border-right: 1.5px solid white;
+    background-color: $color;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color, 10%);
+    }
+  }
+}

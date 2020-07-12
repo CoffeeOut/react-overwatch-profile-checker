@@ -1,0 +1,62 @@
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-header__avatar-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  width: 220px;
+}
+
+.avatar-wrapper__border {
+  z-index: 1;
+  height: inherit;
+  width: inherit;
+  background-size: auto, cover;
+  background-position: 50% 90%, 50%;
+  background-repeat: no-repeat;
+}
+
+.avatar-wrapper__avatar {
+  z-index: 0;
+  position: absolute;
+  height: 45%;
+  width: 45%;
+  border-radius: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile-header__battle-tag {
+  color: inherit;
+  font-family: inherit;
+  font-size: 25px;
+}
+
+.profile-header__rank-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.rank-wrapper__highest-rank-icon {
+  position: absolute;
+  left: -35px;
+  width: 35px;
+}
+
+.rank-wrapper__highest-rank {
+  color: inherit;
+  font-family: inherit;
+  font-size: 25px;
+}

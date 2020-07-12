@@ -1,0 +1,13 @@
+.button {
+  color: inherit;
+  border: none;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button__image {
+  height: 50%;
+}

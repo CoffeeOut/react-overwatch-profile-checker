@@ -1,0 +1,60 @@
+@import '../../../styles/variables';
+
+.profile-table {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-width: 80%;
+}
+
+.profile-table__title-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $darkblue;
+  color: white;
+}
+
+.profile-table__title-wrapper,
+.profile-table__table-row {
+  margin: 2.5px 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.profile-table__table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: $darkblue;
+}
+
+.table-row__value {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 400px) {
+  .profile-table__title-wrapper,
+  .profile-table__table-row {
+    min-height: 35px;
+    font-size: 13px;
+  }
+
+  .table-row__image {
+    height: 20px;
+  }
+}
+
+@media (min-width: 400px) {
+  .profile-table__title-wrapper,
+  .profile-table__table-row {
+    min-height: 40px;
+    font-size: 15px;
+  }
+
+  .table-row__image {
+    height: 25px;
+  }
+}

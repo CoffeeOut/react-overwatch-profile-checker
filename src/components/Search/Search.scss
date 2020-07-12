@@ -1,0 +1,52 @@
+@import "../../styles/variables";
+
+.search {
+  position: relative;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 80% 20%;
+  height: 50px;
+  box-shadow: 0 0 0 1px #79868a;
+}
+
+.search,
+.search__input {
+  border-bottom-left-radius: 17px;
+  border-top-left-radius: 17px;
+}
+
+.search,
+.search__button {
+  border-bottom-right-radius: 17px;
+  border-top-right-radius: 17px;
+}
+
+.search__input {
+  font-size: 17px;
+
+  &:focus {
+    box-shadow: 0 0 0 1px $purple;
+  }
+}
+
+.search__button {
+  background-color: $purple;
+  transition: 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: darken($purple, 20%);
+  }
+}
+
+@media (max-width: 768px) {
+  .search {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .search {
+    width: 350px;
+  }
+}
