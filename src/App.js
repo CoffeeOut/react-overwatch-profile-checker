@@ -200,7 +200,7 @@ function App() {
             <Footer>
                 <a
                     className='page-footer__link'
-                    href='https://github.com/jdrevan/react-overwatch-profile-checker'
+                    href='https://github.com/CoffeeOut/react-overwatch-profile-checker'
                     rel='noopener noreferrer'
                     target='_blank'>View source on Github
                 </a>

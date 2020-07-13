@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 400px;
-  max-width: 80%;
+  max-width: 90%;
 }
 
 .profile-table__title-wrapper {
@@ -35,15 +35,15 @@
   align-items: center;
 }
 
+.table-row__image {
+  height: 25px;
+}
+
 @media (max-width: 400px) {
   .profile-table__title-wrapper,
   .profile-table__table-row {
     min-height: 35px;
     font-size: 13px;
-  }
-
-  .table-row__image {
-    height: 20px;
   }
 }
 
@@ -52,9 +52,5 @@
   .profile-table__table-row {
     min-height: 40px;
     font-size: 15px;
-  }
-
-  .table-row__image {
-    height: 25px;
   }
 }
