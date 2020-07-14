@@ -52,10 +52,18 @@
 }
 
 .search-wrapper__error-message {
+  color: red;
+}
+
+.search-wrapper__hint {
+  color: black;
+}
+
+.search-wrapper__error-message,
+.search-wrapper__hint {
   position: absolute;
   bottom: -25px;
   left: 10px;
-  color: red;
   font-size: 15px;
 }
 

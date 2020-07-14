@@ -20,7 +20,7 @@ function battleTagValidation(value) {
         return validationObject;
     }
 
-    if (!/^[\D]{2,15}\b [\D]{2,4}\b [a-z][\D|\d]{2,11}\b#[\d]{4,5}$/ig.test(value.trim())) {
+    if (!/^[a-zA-Z]{2,15} [a-zA-Z][a-zA-Z0-9]{2,11}#[\d]{4,5}$/ig.test(value.trim())) {
         validationObject.error = 'Invalid format!';
         return validationObject;
     }
@@ -43,24 +43,12 @@ function battleTagValidation(value) {
         'psn': 'psn'
     };
 
-    const normalizedRegions = {
-        'usa': 'us',
-        'america': 'us',
-        'us': 'us',
-        'europe': 'eu',
-        'euro': 'eu',
-        'eu': 'eu',
-        'asia': 'asia',
-        'as': 'asia'
-    };
-
     let splittedValue = value.split(' ');
 
-    splittedValue[0] = normalizedPlatforms[splittedValue[0].toLowerCase()] || null;
-    splittedValue[1] = normalizedRegions[splittedValue[1].toLowerCase()] || null;
-
-    if (splittedValue.includes(null)) {
-        validationObject.error = 'Platform or region invalid!';
+    if(normalizedPlatforms[splittedValue[0].toLowerCase()]){
+        splittedValue[0] = normalizedPlatforms[splittedValue[0].toLowerCase()];
+    } else {
+        validationObject.error = 'Invalid platform!';
         return validationObject;
     }
 
@@ -125,10 +113,10 @@ function App() {
             setSearchErrorMessage(null);
             setSearchRequest(validationResult.value.join(' '));
 
-            let [platform, region, battleTag] = validationResult.value;
+            let [platform, battleTag] = validationResult.value;
             battleTag = battleTag.replace('#', '-');
 
-            fetch(`https://ow-api.com/v1/stats/${platform}/${region}/${battleTag}/complete`)
+            fetch(`https://ow-api.com/v1/stats/${platform}/*/${battleTag}/complete`)
                 .then(response => response.json())
                 .then(data => {
                     if (!data) setSearchErrorMessage('Something went wrong...');
@@ -180,10 +168,11 @@ function App() {
                     <>
                         <div className='search-wrapper'>
                             <Search
-                                placeholder='platform region battletag'
+                                placeholder='platform battletag'
                                 onSearch={searchProfile}>
-                                {searchErrorMessage &&
-                                    <span className='search-wrapper__error-message'>{searchErrorMessage}</span>
+                                {searchErrorMessage ?
+                                    <span className='search-wrapper__error-message'>{searchErrorMessage}</span> :
+                                    <span className='search-wrapper__hint'>For example - pc Kowalski#21485</span>
                                 }
                             </Search>
                         </div>
